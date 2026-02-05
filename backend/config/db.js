@@ -22,6 +22,7 @@ const sequelize = new Sequelize(
 
 const connectDB = async () => {
   try {
+    console.log(`Attempting to connect to DB at Host: ${process.env.DB_HOST} User: ${process.env.DB_USER}`);
     await sequelize.authenticate();
     console.log('MySQL Connected...');
   } catch (error) {
